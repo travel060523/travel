@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "hotels" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "hotels" %}</h2>
+{% if hotel.count > 0 %}
+<div class="row">
+	<table id="myTable" class="table-manager" style="width:100%">
+		<thead>
+			<tr>
+				<th>{% trans "region_title" %}</th>
+				<th>{% trans "hotel_title" %}</th>
+				<th>{% trans "price" %}</th>
+				<th>{% trans "flight" %}</th>
+				<!--<th></th>-->
+				<th><a href="{% url 'hotel_create'%}">{% trans "Add" %}</a></th>				
+			</tr>
+		</thead>
+		<tbody>
+			{% for n in hotel %}
+			<tr>
+				<td>
+					<p>{{ n.region }}</p>	
+				</td>
+				<td>
+					<p>{{ n.title }}</p>	
+				</td>
+				<td>
+					<p>{{ n.price }}</p>	
+				</td>
+				<td>
+					<p>{{ n.flight }}</p>	
+				</td>
+				<td>
+					<a href="{% url 'hotel_edit' n.id %}">{% trans "Change" %}</a> |
+					<a href="{% url 'hotel_read' n.id %}">{% trans "View" %}</a> |
+					<a onclick="return confirm('Удалить запись?')" href="{% url 'hotel_delete' n.id %}">{% trans "Delete" %}</a>
+				</td>			
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% else %}
+<a href="{% url 'hotel_create'%}">{% trans "Add" %}</a>
+{% endif %}
+{% endblock content %}

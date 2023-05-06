@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block title %}{% trans "Read" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "country" %}</h2>
+<div class="row justify-content-center">
+	<div class="card" style="width:100%">
+		<div class="card-header">	
+			<h4>{{ country.title }}</h4>		
+		</div>
+		<div class="card-body">
+			<div class="row">
+				<div class="col-md-8">				
+					<p>{{ country.details }}</p>					
+				</div>
+				<div class="col-md-4">
+					{% if country.photo.url == "/ media /images/country1.jpg" %}
+						<img style="width:100%; max-width:400px;" src="{% static 'images/country1.jpg' %}" alt="{{ country.title }}" title="{{ country.details }}">    
+					{% elif country.photo.url == "/ media /images/country2.jpg" %}
+						<img style="width:100%; max-width:400px;" src="{% static 'images/country2.jpg' %}" alt="{{ country.title }}" title="{{ country.details }}">    
+					{% elif country.photo.url == "/ media /images/country3.jpg" %}
+						<img style="width:100%; max-width:400px;" src="{% static 'images/country3.jpg' %}" alt="{{ country.title }}" title="{{ country.details }}">    
+					{% elif country.photo.url == "/ media /images/country4.jpg" %}
+						<img style="width:100%; max-width:400px;" src="{% static 'images/country4.jpg' %}" alt="{{ country.title }}" title="{{ country.details }}">    
+					{% else %}
+						{% if country.photo.url != None %}
+							<img style="width:100%; max-width:400px;" src="{{ country.photo.url}}" alt="{{ country.title }}" title="{{ country.details }}">
+						{% endif %}
+					{% endif %}
+				</div>
+			</div>				
+		</div>
+		<div class="card-footer">				
+		</div>		
+	</div>
+	<br>
+	<a class="btn btn-outline-info" style="width:100px; margin-top:5px" href="{% url 'country_index' %}">{% trans "Back" %}</a>    	
+</div>
+{% endblock content %}

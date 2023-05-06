@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "claims" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "claims" %}</h2>
+{% if claim.count > 0 %}
+<div class="row">
+	<table id="myTable" class="table-manager" style="width:100%">
+		<thead>
+			<tr>
+				<th>{% trans "datec" %}</th>
+				<th>{% trans "user" %}</th>
+				<th>{% trans "hotel_title" %}</th>
+				<th>{% trans "date" %}</th>
+				<!--<th></th>-->
+				<th><a href="{% url 'claim_create'%}">{% trans "Add" %}</a></th>				
+			</tr>
+		</thead>
+		<tbody>
+			{% for n in claim %}
+			<tr>
+				<td>
+					<p>{{ n.datec  | date:"d.m.Y" }}</p>	
+				</td>
+				<td>
+					<p>{{ n.user.last_name }} {{ n.user.first_name }}</p>	
+				</td>
+				<td>
+					<p>{{ n.hotel.region }}</p>	
+					<p>{{ n.hotel.title }}</p>	
+				</td>
+				<td>
+					<p>{{ n.start  | date:"d.m.Y" }}-{{ n.finish  | date:"d.m.Y" }}</p>	
+				</td>
+				<td>
+					<a href="{% url 'claim_edit' n.id %}">{% trans "Change" %}</a> |
+					<a href="{% url 'claim_read' n.id %}">{% trans "View" %}</a> |
+					<a onclick="return confirm('Удалить запись?')" href="{% url 'claim_delete' n.id %}">{% trans "Delete" %}</a>
+				</td>			
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% else %}
+<a href="{% url 'claim_create'%}">{% trans "Add" %}</a>
+{% endif %}
+{% endblock content %}

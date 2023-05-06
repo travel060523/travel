@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Read" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "region" %}</h2>
+<div class="row justify-content-center">
+	<div class="card" style="width:100%">
+		<div class="card-header">			
+		</div>
+		<div class="card-body">
+			<h4>{{ region.country }}</h4>			
+			<h4>{{ region.title }}</h4>			
+		</div>
+		<div class="card-footer">				
+		</div>		
+	</div>
+	<br>
+	<a class="btn btn-outline-info" style="width:100px; margin-top:5px" href="{% url 'region_index' %}">{% trans "Back" %}</a>    	
+</div>
+{% endblock content %}

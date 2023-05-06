@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "regions" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "regions" %}</h2>
+{% if region.count > 0 %}
+<div class="row">
+	<table id="myTable" class="table-manager" style="width:100%">
+		<thead>
+			<tr>
+				<th>{% trans "country_title" %}</th>
+				<th>{% trans "region_title" %}</th>
+				<!--<th></th>-->
+				<th><a href="{% url 'region_create'%}">{% trans "Add" %}</a></th>				
+			</tr>
+		</thead>
+		<tbody>
+			{% for n in region %}
+			<tr>
+				<td>
+					<p>{{ n.country }}</p>	
+				</td>
+				<td>
+					<p>{{ n.title }}</p>	
+				</td>
+				<td>
+					<a href="{% url 'region_edit' n.id %}">{% trans "Change" %}</a> |
+					<a href="{% url 'region_read' n.id %}">{% trans "View" %}</a> |
+					<a onclick="return confirm('Удалить запись?')" href="{% url 'region_delete' n.id %}">{% trans "Delete" %}</a>
+				</td>			
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% else %}
+<a href="{% url 'region_create'%}">{% trans "Add" %}</a>
+{% endif %}
+{% endblock content %}
