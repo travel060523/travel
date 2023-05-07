@@ -87,7 +87,7 @@
 					<div class="card">
 						<div class="card-header">
 							<h5>{{ n.region }}</h5>
-							<h4>{{ n.title }}</h4>
+							<h4><a href="{% url 'hotel_read' n.id %}">{{ n.title }}</a></h4>
 						</div>
 						<div class="card-body">
 							<div class="row">
@@ -99,7 +99,6 @@
 											<button type="submit" name="btn{{ n.id }}" id="btn_id{{ n.id }}" class="btn btn-outline-success" >{% trans "Apply" %}</button>
 											<input hidden type="text" name="hotel_id" size="0" value="{{ n.id }}">
 											<input hidden type="text" name="price" size="0" value="{{ n.price }}">
-											<input hidden type="text" name="flight" size="0" value="{{ n.flight }}">
 											<input hidden type="text" name="user" size="0" value="{{ user.id }}">
 										</form>
 									{% endif %}
@@ -165,7 +164,6 @@
 						</div>
 						<div class="card-footer text-muted">
 							<p><strong>{% trans "price" %}</strong>: {{ n.price }}<p>
-							<p><strong>{% trans "flight" %}</strong>: {{ n.flight }}<p>
 						</div>
 					</div>
 				</td>

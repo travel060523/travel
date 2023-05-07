@@ -8,7 +8,6 @@
 	<h3>{% trans "reviews" %}</h3>
 </div>
 <br>
-{% load humanize %}
 {% if reviews.count > 0 %}
 <div class="row">
 	<table id="myTable" style="width:100%">
@@ -23,15 +22,14 @@
 				<td>
 					<div class="card">
 						<div class="card-header">
-							<h5>
-								{{ n.user }}
-							</h5>
+							<h5>{{ n.hotel }}</h5>
 						</div>
 						<div class="card-body">					
 							<div class="Stars" style='--rating: {{ n.rating | stringformat:".1f" }};'></div>																													
 							<p>{{ n.details }}</p>
 						</div>
 						<div class="card-footer text-muted">
+							<p><strong>{{ n.user }}</strong><p>
 							<p><strong>{{ n.dater | date:"d.m.Y H:i" }}</strong><p>
 						</div>
 					</div>

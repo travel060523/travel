@@ -77,7 +77,6 @@ class Hotel(models.Model):
     details = models.TextField(_('hotel_details'))
     photo = models.ImageField(_('hotel_photo'), upload_to='images/', blank=True, null=True)    
     price = models.DecimalField(_('price'), max_digits=9, decimal_places=2)
-    flight = models.DecimalField(_('flight_cost'), max_digits=9, decimal_places=2)
     class Meta:
         # Параметры модели
         # Переопределение имени таблицы
@@ -99,7 +98,6 @@ class ViewHotel(models.Model):
     details = models.TextField(_('hotel_details'))
     photo = models.ImageField(_('hotel_photo'), upload_to='images/', blank=True, null=True)    
     price = models.DecimalField(_('price'), max_digits=9, decimal_places=2)
-    flight = models.DecimalField(_('flight_cost'), max_digits=9, decimal_places=2)
     avg_rating = models.DecimalField(_('avg_rating'), max_digits=6, decimal_places=2)
     class Meta:
         # Параметры модели
@@ -125,7 +123,7 @@ class Claim(models.Model):
     start = models.DateTimeField(_('start'))
     finish = models.DateTimeField(_('finish'))
     details = models.TextField(_('claim_details'))
-    result = models.TextField(_('result'), blank=True, null=True)
+    result = models.TextField(_('claim_result'), blank=True, null=True)
     class Meta:
         # Параметры модели
         # Переопределение имени таблицы

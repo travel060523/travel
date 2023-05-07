@@ -17,13 +17,13 @@
 			<div class="row">
 				<div class="col-md-6">				
 					<p><strong>{% trans "date" %}</strong>: {{ claim.start  | date:"d.m.Y" }}-{{ claim.finish  | date:"d.m.Y" }}<p>
-					<p>{{ claim.details }}</p>						
+					<p><strong>{% trans "claim_details" %}</strong>: {{ claim.details }}</p>						
+					<p><strong>{% trans "claim_result" %}</strong>: {{ claim.result }}</p>						
 				</div>
 				<div class="col-md-6">
 					<p><strong>{% trans "region" %}</strong>: {{ claim.hotel.region }}<p>
 					<p><strong>{% trans "hotel_title" %}</strong>: {{ claim.hotel.title }}<p>
 					<p><strong>{% trans "price" %}</strong>: {{ claim.hotel.price }}<p>
-					<p><strong>{% trans "flight" %}</strong>: {{ claim.hotel.flight }}<p>						
 				</div>
 			</div>				
 		</div>

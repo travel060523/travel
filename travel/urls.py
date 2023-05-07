@@ -29,6 +29,8 @@ urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
     #path('export/excel/', views.export_excel, name='export_excel'),     
 
+    path('cabinet/', views.cabinet, name='cabinet'),
+
     path('country/index/', views.country_index, name='country_index'),
     path('country/create/', views.country_create, name='country_create'),
     path('country/edit/<int:id>/', views.country_edit, name='country_edit'),
@@ -56,7 +58,7 @@ urlpatterns = [
 
     path('reviews/index/', views.reviews_index, name='reviews_index'),
     path('reviews/list/', views.reviews_list, name='reviews_list'),
-    path('reviews/create/', views.reviews_create, name='reviews_create'),
+    path('reviews/create/<int:hotel_id>/', views.reviews_create, name='reviews_create'),
     path('reviews/delete/<int:id>/', views.reviews_delete, name='reviews_delete'),
 
     path('news/index/', views.news_index, name='news_index'),

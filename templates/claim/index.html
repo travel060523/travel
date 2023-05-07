@@ -13,8 +13,9 @@
 				<th>{% trans "user" %}</th>
 				<th>{% trans "hotel_title" %}</th>
 				<th>{% trans "date" %}</th>
+				<th>{% trans "claim_result" %}</th>
 				<!--<th></th>-->
-				<th><a href="{% url 'claim_create'%}">{% trans "Add" %}</a></th>				
+				<th></th>				
 			</tr>
 		</thead>
 		<tbody>
@@ -32,6 +33,9 @@
 				</td>
 				<td>
 					<p>{{ n.start  | date:"d.m.Y" }}-{{ n.finish  | date:"d.m.Y" }}</p>	
+				</td>
+				<td>
+					<p>{{ n.result }}</p>	
 				</td>
 				<td>
 					<a href="{% url 'claim_edit' n.id %}">{% trans "Change" %}</a> |

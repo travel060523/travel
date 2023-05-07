@@ -58,6 +58,13 @@ def index(request):
 def contact(request):
     return render(request, "contact.html")
 
+# Кабинет
+@login_required
+def cabinet(request):
+    claim = Claim.objects.filter(user_id=request.user.id).order_by('-datec')   
+    reviews = Reviews.objects.filter(user_id=request.user.id).order_by('-dater')    
+    return render(request, "cabinet.html", {"claim": claim, "reviews": reviews, })
+
 ###################################################################################################
 
 # Список для изменения с кнопками создать, изменить, удалить
@@ -140,7 +147,7 @@ def country_delete(request, id):
         return HttpResponse(exception)
 
 # Просмотр страницы read.html для просмотра объекта.
-@login_required
+#@login_required
 def country_read(request, id):
     try:
         country = Country.objects.get(id=id) 
@@ -311,8 +318,6 @@ def hotel_list(request):
                 print("hotel_id ", hotel_id)
                 price = request.POST.dict().get("price")
                 print("price ", price)
-                flight = request.POST.dict().get("flight")
-                print("flight ", flight)
                 user = request.POST.dict().get("user")
                 print("user ", user)
                 # Перейти к созданию заявки
@@ -338,7 +343,6 @@ def hotel_create(request):
             if 'photo' in request.FILES:                
                 hotel.photo = request.FILES['photo']        
             hotel.price = request.POST.get("price")
-            hotel.flight = request.POST.get("flight")
             hotelform = HotelForm(request.POST)
             if hotelform.is_valid():
                 hotel.save()
@@ -366,7 +370,6 @@ def hotel_edit(request, id):
             if 'photo' in request.FILES:                
                 hotel.photo = request.FILES['photo']        
             hotel.price = request.POST.get("price")
-            hotel.flight = request.POST.get("flight")
             hotelform = HotelForm(request.POST)
             if hotelform.is_valid():
                 hotel.save()
@@ -375,7 +378,7 @@ def hotel_edit(request, id):
                 return render(request, "hotel/edit.html", {"form": hotelform})
         else:
             # Загрузка начальных данных
-            hotelform = HotelForm(initial={'region': hotel.region, 'title': hotel.title, 'details': hotel.details, 'photo': hotel.photo, 'price': hotel.price, 'flight': hotel.flight, })
+            hotelform = HotelForm(initial={'region': hotel.region, 'title': hotel.title, 'details': hotel.details, 'photo': hotel.photo, 'price': hotel.price, })
             return render(request, "hotel/edit.html", {"form": hotelform})
     except Hotel.DoesNotExist:
         return HttpResponseNotFound("<h2>Hotel not found</h2>")
@@ -399,11 +402,14 @@ def hotel_delete(request, id):
         return HttpResponse(exception)
 
 # Просмотр страницы read.html для просмотра объекта.
-@login_required
+#@login_required
 def hotel_read(request, id):
     try:
-        hotel = Hotel.objects.get(id=id) 
-        return render(request, "hotel/read.html", {"hotel": hotel})
+        #hotel = Hotel.objects.get(id=id) 
+        hotel = ViewHotel.objects.get(id=id) 
+        # Отзывы на данный отель
+        reviews = Reviews.objects.filter(hotel_id=id).exclude(rating=None)
+        return render(request, "hotel/read.html", {"hotel": hotel, "reviews": reviews})
     except Hotel.DoesNotExist:
         return HttpResponseNotFound("<h2>Hotel not found</h2>")
     except Exception as exception:
@@ -443,7 +449,7 @@ def claim_create(request, hotel_id):
             claimform = ClaimForm(request.POST)
             if claimform.is_valid():
                 claim.save()
-                return HttpResponseRedirect(reverse('claim_list'))
+                return HttpResponseRedirect(reverse('cabinet'))
             else:
                 return render(request, "claim/create.html", {"form": claimform, "hotel": hotel, })
         else:        
@@ -461,20 +467,21 @@ def claim_edit(request, id):
     try:
         claim = Claim.objects.get(id=id)
         if request.method == "POST":
-            claim.hotel = Hotel.objects.filter(id=request.POST.get("hotel")).first()
-            claim.start = request.POST.get("start")
-            claim.finish = request.POST.get("finish")
-            claim.details = request.POST.get("details")
-            claimform = ClaimForm(request.POST)
+            #claim.hotel = Hotel.objects.filter(id=request.POST.get("hotel")).first()
+            #claim.start = request.POST.get("start")
+            #claim.finish = request.POST.get("finish")
+            #claim.details = request.POST.get("details")
+            claim.result = request.POST.get("result")
+            claimform = ClaimFormEdit(request.POST)
             if claimform.is_valid():
                 claim.save()
                 return HttpResponseRedirect(reverse('claim_index'))
             else:
-                return render(request, "claim/edit.html", {"form": claimform})
+                return render(request, "claim/edit.html", {"form": claimform, "claim": claim, })
         else:
             # Загрузка начальных данных
-            claimform = ClaimForm(initial={'hotel': claim.hotel, 'start': claim.start, 'finish': claim.finish, 'details': claim.details, })
-            return render(request, "claim/edit.html", {"form": claimform})
+            claimform = ClaimFormEdit(initial={'result': claim.result, })
+            return render(request, "claim/edit.html", {"form": claimform, "claim": claim, })
     except Claim.DoesNotExist:
         return HttpResponseNotFound("<h2>Claim not found</h2>")
     except Exception as exception:
@@ -525,22 +532,24 @@ def reviews_index(request):
 # В функции create() получаем данные из запроса типа POST, сохраняем данные с помощью метода save()
 # и выполняем переадресацию на корень веб-сайта (то есть на функцию index).
 @login_required
-def reviews_create(request):
+def reviews_create(request, hotel_id):
+    hotel = Hotel.objects.get(id=hotel_id)
     if request.method == "POST":
         reviews = Reviews()        
-        reviews.hotel = Hotel.objects.filter(id=request.POST.get("hotel")).first()
+        #reviews.hotel = Hotel.objects.filter(id=request.POST.get("hotel")).first()
+        reviews.hotel_id = hotel_id
         reviews.rating = request.POST.get("rating")
         reviews.details = request.POST.get("details")
         reviews.user = request.user
         reviewsform = ReviewsForm(request.POST)
         if reviewsform.is_valid():
             reviews.save()
-            return HttpResponseRedirect(reverse('index'))
+            return HttpResponseRedirect(reverse('cabinet'))
         else:
-            return render(request, "reviews/create.html", {"form": reviewsform})     
+            return render(request, "reviews/create.html", {"form": reviewsform,  "hotel": hotel, })     
     else:        
         reviewsform = ReviewsForm(initial={'rating': 5, })
-        return render(request, "reviews/create.html", {"form": reviewsform})
+        return render(request, "reviews/create.html", {"form": reviewsform, "hotel": hotel, })
 
 # Удаление данных из бд
 # Функция delete аналогичным функции edit образом находит объет и выполняет его удаление.

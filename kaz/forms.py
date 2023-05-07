@@ -56,13 +56,12 @@ class RegionForm(forms.ModelForm):
 class HotelForm(forms.ModelForm):
     class Meta:
         model = Hotel
-        fields = ['region', 'title', 'details', 'photo', 'price', 'flight',]
+        fields = ['region', 'title', 'details', 'photo', 'price', ]
         widgets = {
             'region': forms.Select(attrs={'class': 'chosen'}),
             'title': TextInput(attrs={"size":"100"}),
             'details': Textarea(attrs={'cols': 100, 'rows': 10}),   
             'price': NumberInput(attrs={"size":"10"}),
-            'flight': NumberInput(attrs={"size":"10"}),
         }
         labels = {
             'region': _('region_title'),            
@@ -113,15 +112,16 @@ class ClaimFormEdit(forms.ModelForm):
 class ReviewsForm(forms.ModelForm):
     class Meta:
         model = Reviews
-        fields = ('hotel', 'details', 'rating')
+        #fields = ('hotel', 'details', 'rating')
+        fields = ('details', 'rating')
         widgets = {
-            'hotel': forms.Select(attrs={'class': 'chosen'}),            
+            #'hotel': forms.Select(attrs={'class': 'chosen'}),            
             'details': Textarea(attrs={'cols': 100, 'rows': 10}),                        
             'rating': forms.NumberInput(attrs={'max': '5', 'min': '1'}),            
         }
-        labels = {
-            'hotel': _('hotel'),            
-        }
+        #labels = {
+        #    'hotel': _('hotel'),            
+        #}
 
 
 class NewsForm(forms.ModelForm):

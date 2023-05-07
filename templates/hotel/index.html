@@ -12,7 +12,6 @@
 				<th>{% trans "region_title" %}</th>
 				<th>{% trans "hotel_title" %}</th>
 				<th>{% trans "price" %}</th>
-				<th>{% trans "flight" %}</th>
 				<!--<th></th>-->
 				<th><a href="{% url 'hotel_create'%}">{% trans "Add" %}</a></th>				
 			</tr>
@@ -28,9 +27,6 @@
 				</td>
 				<td>
 					<p>{{ n.price }}</p>	
-				</td>
-				<td>
-					<p>{{ n.flight }}</p>	
 				</td>
 				<td>
 					<a href="{% url 'hotel_edit' n.id %}">{% trans "Change" %}</a> |

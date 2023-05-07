@@ -4,14 +4,17 @@
 {% block header %}{% endblock header %}
 {% block content %}
 <h2>{% trans "reviews" %}</h2>
+<h3>{{ hotel }}</h3>	
+<p>{{ hotel.details }}</p>	
+<h5>{% trans "price" %}: {{ hotel.price }}</h5>	
 <form method="POST" enctype="multipart/form-data">
 	{% csrf_token %}
     <table>
         {{  form.as_table }}
     </table>
 	<div class="div-button-left">
-		<button type="submit" class="btn btn-outline-success" style="width:100px">{% trans "Save" %}</button>	
-		<button onclick="location.href='{% url 'index' %}'" class="btn btn-outline-info" style="width:100px">{% trans "Back" %}</button>	
+		<button type="submit" class="btn btn-outline-success" style="width:100px;  margin-top:5px">{% trans "Save" %}</button>	
+		<a class="btn btn-outline-info" style="width:100px; margin-top:5px" onclick="history.back()">{% trans "Back" %}</a>    	
 	</div>
 </form>
 <script type="text/javascript">

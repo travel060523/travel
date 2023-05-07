@@ -282,7 +282,6 @@ pre {
 	background-image: -webkit-linear-gradient(top,  LightCyan, MintCream);
 	background-size: cover;
 	width: 100%;
-	height: 600px; 
 	height: auto; 
 	overflow: auto; 
     margin-top: 20px;    
@@ -316,7 +315,6 @@ pre {
     margin-top: 20px;    
 	margin-bottom: 20px; 
 	padding: 20px;  
-	font-size: x-large;	
 }  
 .part3 h4{
 	color: AntiqueWhite;		 
@@ -477,7 +475,7 @@ pre {
 }
 .table-manager thead th {
 	background-color: var(--main-background-color-dark);		
-	color: var(--main-background-color-light);
+	color: var(--main-text-color);
 	font-weight: bold;
 	text-align: center;
 	padding: 10px;

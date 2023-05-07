@@ -4,11 +4,10 @@
 {% block header %}{% endblock header %}
 {% block content %}
 <h2>{% trans "claim" %}</h2>
+<h3>{{ hotel }}</h3>	
+<p>{{ hotel.details }}</p>	
+<h5>{% trans "price" %}: {{ hotel.price }}</h5>
 <form method="POST" enctype="multipart/form-data">
-	<h3>{{ hotel }}</h3>	
-	<p>{{ hotel.details }}</p>	
-	<h5>{% trans "price" %}: {{ hotel.price }}</h5>
-	<h5>{% trans "flight" %}: {{ hotel.flight }}</h5>
 	{% csrf_token %}
     <table>
         {{ form }}

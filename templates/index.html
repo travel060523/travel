@@ -26,7 +26,7 @@
 			{% if LANGUAGE_CODE == 'kk' %}
 				
 			{% else %}
-				Что-то ободряющее
+				Только у нас горящие туры из Алматы или Нур-Султана (Астаны) по самым низким ценам! Благодаря уникальной системе сбора информации по всем туроператорам, мы получаем самые свежие данные и лучшие предложения на данный момент. Наша турфирма предлагает горящие путевки по таким направлениям как: Турция, Тайланд, Египет, ОАЭ, Мальдивы и др. Став нашим клиентом один раз, вы всегда будете в курсе наивыгоднейших предложений и последних событий в мире туризма. Воплотите своё желание в реальность, купив горящий тур из Нур-Султана (Астаны) или Алматы в страну вашей мечты и "поехали"!
 			{% endif %}	
 		</div>
 		<div class="col-md-4">
@@ -57,7 +57,7 @@
 						<img style="width:100%; max-width:200px;" src="{{ c.photo.url}}" alt="{{ c.title }}" title="{{ c.details }}">
 					{% endif %}
 				{% endif %}
-				<h4><a href="{% url 'hotel_list'%}">{{ c.title }}</a></h4>				
+				<h4><a href="{% url 'country_read' c.id%}">{{ c.title }}</a></h4>	
 			</div>
 			{% endfor %}
 		{% endif %}						
@@ -127,7 +127,7 @@
 							<img style="width:100%; max-width:400px;" src="{{ r.photo.url}}" alt="{{ r.title }}" title="{{ r.details }}">
 						{% endif %}
 					{% endif %}
-					<h6> {{ r.title }}</h6>
+					<h6><a href="{% url 'hotel_read' r.id %}">{{ r.title }}</a></h6>
 					<p><div class="Stars" style='--rating: {{ r.avg_rating| stringformat:".1f" }};'></div></p>							
 				</div>
 			{% endfor %}
@@ -148,7 +148,7 @@
 					<p><div class="Stars" style='--rating: {{ r.rating| stringformat:".1f" }};'></div></p>							
 					<h6> {{ r.hotel }}</h6>
 					<!-- <h6>{% trans "Rating" %} {{ r.rating }}</h6>																				 -->
-					<p>{{ r.details | slice:"0:100" }}...</p>									
+					<p><small>{{ r.details | slice:"0:200" }}...</small></p>									
 					<h6> {{ r.username }}</h6>
 				</div>
 			{% endfor %}
