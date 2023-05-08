@@ -74,8 +74,8 @@
 		{% if hotel14.count > 0 %}
 			{% for r in hotel14 %}
 				<div class="col-lg-3">				
-					{% if n.photo.url == "/ media /images/hotel1.jpg" %}
-						<img style="width:100%; max-width:400px;" src="{% static 'images/hotel1.jpg' %}" alt="{{ r.title }}" title="{{ r.details }}">
+					{% if r.photo.url == "/ media /images/hotel.jpg" %}
+						<img style="width:100%; max-width:400px;" src="{% static 'images/hotel.jpg' %}" alt="{{ r.title }}" title="{{ r.details }}">
 					{% elif r.photo.url == "/ media /images/hotel2.jpg" %}
 						<img style="width:100%; max-width:400px;" src="{% static 'images/hotel2.jpg' %}" alt="{{ r.title }}" title="{{ r.details }}">
 					{% elif r.photo.url == "/ media /images/hotel3.jpg" %}
