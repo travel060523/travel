@@ -21,15 +21,6 @@
 						</td>
 						<td>
 							<input class="form-control mr-sm-2" type="search" value="{{countrys_search}}" name="countrys_search" style="width: 200px">
-							<!-- <select name="item_country_title" class="chosen"> -->
-								<!-- {% for entry in country %} -->									
-									<!-- {% if entry.title == '' %} -->
-									<!-- <option selected  value="{{ entry.title }}">{{ entry.title }}</option> -->
-									<!-- {% else %} -->
-									<!-- <option value="{{ entry.title }}">{{ entry.title }}</option> -->
-									<!-- {% endif %}								 -->
-								<!-- {% endfor %} -->
-							<!-- </select> -->
 						</td>
 					</tr>
 					<tr>
@@ -38,11 +29,6 @@
 						</td>
 						<td>
 							<input class="form-control mr-sm-2" type="search" value="{{regions_search}}" name="regions_search" style="width: 200px">
-							<!-- <select name="item_region_title" class="chosen"> -->
-								<!-- {% for entry in region %} -->
-								<!-- <option value="{{ entry.title }}">{{ entry.title }}</option> -->
-								<!-- {% endfor %} -->
-							<!-- </select> -->
 						</td>
 					</tr>
 					<tr>
@@ -51,11 +37,6 @@
 						</td>
 						<td>
 							<input class="form-control mr-sm-2" type="search" value="{{hotels_search}}" name="hotels_search" style="width: 200px">
-							<!-- <select name="item_hotel_title" class="chosen"> -->
-								<!-- {% for entry in hotel %} -->
-								<!-- <option value="{{ entry.title }}">{{ entry.title }}</option> -->
-								<!-- {% endfor %} -->
-							<!-- </select> -->
 						</td>
 					</tr>
 					<tr>
@@ -86,6 +67,7 @@
 				<td>
 					<div class="card">
 						<div class="card-header">
+							<h5>{{ n.country }}</h5>
 							<h5>{{ n.region }}</h5>
 							<h4><a href="{% url 'hotel_read' n.id %}">{{ n.title }}</a></h4>
 						</div>

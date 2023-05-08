@@ -12,7 +12,7 @@
 				<th>{% trans "country_title" %}</th>
 				<th>{% trans "region_title" %}</th>
 				<!--<th></th>-->
-				<th><a href="{% url 'region_create'%}">{% trans "Add" %}</a></th>				
+				<th><a href="{% url 'region_create'%}">{% trans "Create" %}</a></th>				
 			</tr>
 		</thead>
 		<tbody>
@@ -35,6 +35,6 @@
 	</table>
 </div>
 {% else %}
-<a href="{% url 'region_create'%}">{% trans "Add" %}</a>
+<a href="{% url 'region_create'%}">{% trans "Create" %}</a>
 {% endif %}
 {% endblock content %}

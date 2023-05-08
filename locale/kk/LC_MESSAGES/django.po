@@ -1,0 +1,484 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-07 19:23+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+#: .\kaz\forms.py:45 .\kaz\models.py:37 .\kaz\models.py:95
+#: .\templates\country\index.html:12 .\templates\region\index.html:12
+msgid "country_title"
+msgstr "Мемлекет"
+
+#: .\kaz\forms.py:67 .\kaz\models.py:57 .\kaz\models.py:97
+#: .\templates\hotel\index.html:12 .\templates\region\index.html:13
+msgid "region_title"
+msgstr "Аймақ"
+
+#: .\kaz\forms.py:92 .\templates\hotel\create.html:6
+#: .\templates\hotel\edit.html:6 .\templates\hotel\read.html:7
+msgid "hotel"
+msgstr "Қонақ үй"
+
+#: .\kaz\forms.py:142
+msgid "Wrong date and time format"
+msgstr "Күн мен уақыт пішімі қате"
+
+#: .\kaz\models.py:38
+msgid "country_details"
+msgstr "Ел сипаттамасы"
+
+#: .\kaz\models.py:39
+msgid "country_photo"
+msgstr "Фото"
+
+#: .\kaz\models.py:58
+msgid "region_details"
+msgstr "Аймақтың сипаттамасы"
+
+#: .\kaz\models.py:76 .\kaz\models.py:98 .\templates\cabinet.html:24
+#: .\templates\cabinet.html:65 .\templates\claim\index.html:14
+#: .\templates\claim\read.html:25 .\templates\hotel\index.html:13
+#: .\templates\reviews\index.html:13
+msgid "hotel_title"
+msgstr "Қонақ үй атауы"
+
+#: .\kaz\models.py:77 .\kaz\models.py:99
+msgid "hotel_details"
+msgstr "Қонақ үй сипаттамасы"
+
+#: .\kaz\models.py:78 .\kaz\models.py:100
+msgid "hotel_photo"
+msgstr "Фото"
+
+#: .\kaz\models.py:79 .\kaz\models.py:101 .\templates\claim\create.html:9
+#: .\templates\claim\edit.html:9 .\templates\claim\read.html:26
+#: .\templates\hotel\index.html:14 .\templates\hotel\list.html:166
+#: .\templates\hotel\read.html:79 .\templates\reviews\create.html:9
+msgid "price"
+msgstr "7 күндік өмір сүру құны (2 адам)"
+
+#: .\kaz\models.py:96
+msgid "region_id"
+msgstr ""
+
+#: .\kaz\models.py:102
+msgid "avg_rating"
+msgstr "Орташа рейтинг"
+
+#: .\kaz\models.py:121
+msgid "datec_claim"
+msgstr "Өтініш беру күні"
+
+#: .\kaz\models.py:124
+msgid "start"
+msgstr "Келу күні"
+
+#: .\kaz\models.py:125
+msgid "finish"
+msgstr "Кету күні"
+
+#: .\kaz\models.py:126 .\templates\claim\read.html:20
+msgid "claim_details"
+msgstr "Қолданба мәліметтері"
+
+#: .\kaz\models.py:127 .\templates\cabinet.html:26
+#: .\templates\claim\index.html:16 .\templates\claim\read.html:21
+msgid "claim_result"
+msgstr "Өтінішті қарау нәтижесі"
+
+#: .\kaz\models.py:141
+msgid "dater_reviews"
+msgstr "Күшін жою күні"
+
+#: .\kaz\models.py:143
+msgid "rating"
+msgstr "Баға"
+
+#: .\kaz\models.py:144
+msgid "details_reviews"
+msgstr "Кері байланыс мәтіні"
+
+#: .\kaz\models.py:159 .\templates\news\index.html:12
+msgid "daten"
+msgstr "Күні"
+
+#: .\kaz\models.py:160
+msgid "title_news"
+msgstr "Жаңалықтар тақырыбы"
+
+#: .\kaz\models.py:161
+msgid "details_news"
+msgstr "Жаңалықтар мәліметтері"
+
+#: .\kaz\models.py:162
+msgid "photo_news"
+msgstr "Фото"
+
+#: .\templates\base.html:36
+msgid "Home"
+msgstr "Үй"
+
+#: .\templates\base.html:43 .\templates\base.html:63
+#: .\templates\hotel\index.html:3 .\templates\hotel\index.html:6
+#: .\templates\hotel\list.html:4 .\templates\hotel\list.html:8
+#: .\templates\hotel\list.html:50 .\templates\index.html:70
+msgid "hotels"
+msgstr "Қонақ үйлер"
+
+#: .\templates\base.html:46 .\templates\news\create.html:6
+#: .\templates\news\edit.html:6 .\templates\news\read.html:7
+msgid "news"
+msgstr "Жаңалықтар"
+
+#: .\templates\base.html:49 .\templates\contact.html:7
+msgid "contacts"
+msgstr "Контактілер"
+
+#: .\templates\base.html:53 .\templates\cabinet.html:7
+msgid "cabinet"
+msgstr "Жеке бөлме"
+
+#: .\templates\base.html:61 .\templates\country\index.html:3
+#: .\templates\country\index.html:6 .\templates\hotel\list.html:20
+#: .\templates\index.html:40
+msgid "countrys"
+msgstr "Елдер"
+
+#: .\templates\base.html:62 .\templates\hotel\list.html:37
+#: .\templates\region\index.html:3 .\templates\region\index.html:6
+msgid "regions"
+msgstr "Аймақтар"
+
+#: .\templates\base.html:65 .\templates\cabinet.html:16
+#: .\templates\claim\index.html:3 .\templates\claim\index.html:6
+msgid "claims"
+msgstr "Қолданбалар"
+
+#: .\templates\base.html:66 .\templates\index.html:141
+#: .\templates\reviews\index.html:4 .\templates\reviews\list.html:4
+msgid "reviewss"
+msgstr "Пікірлер"
+
+#: .\templates\base.html:68 .\templates\index.html:163
+#: .\templates\news\index.html:3 .\templates\news\index.html:6
+#: .\templates\news\list.html:4 .\templates\news\list.html:8
+msgid "newss"
+msgstr "Жаңалықтар"
+
+#: .\templates\base.html:73 .\templates\cabinet.html:12
+#: .\templates\registration\my_account.html:4
+#: .\templates\registration\my_account.html:10
+msgid "My account"
+msgstr "Менің аккаунтым"
+
+#: .\templates\base.html:74 .\templates\cabinet.html:14
+#: .\templates\registration\password_change_form.html:9
+#: .\templates\registration\password_change_form.html:15
+msgid "Change password"
+msgstr "Құпия сөзді өзгерту"
+
+#: .\templates\base.html:76
+msgid "Log out"
+msgstr "Шығу"
+
+#: .\templates\base.html:81
+msgid "Log In"
+msgstr "Кіру"
+
+#: .\templates\base.html:83 .\templates\registration\signup.html:4
+#: .\templates\registration\signup.html:10
+msgid "Sign up"
+msgstr "Тіркеу"
+
+#: .\templates\cabinet.html:22 .\templates\claim\index.html:12
+#: .\templates\claim\read.html:11
+msgid "datec"
+msgstr "Өтініш беру күні"
+
+#: .\templates\cabinet.html:23 .\templates\claim\index.html:13
+#: .\templates\reviews\index.html:16
+msgid "user"
+msgstr "Пайдаланушы"
+
+#: .\templates\cabinet.html:25 .\templates\claim\index.html:15
+#: .\templates\claim\read.html:19
+msgid "date"
+msgstr "Күні"
+
+#: .\templates\cabinet.html:50
+msgid "reviews create"
+msgstr "Пікір жасау"
+
+#: .\templates\cabinet.html:59 .\templates\hotel\read.html:86
+#: .\templates\reviews\create.html:6 .\templates\reviews\index.html:7
+#: .\templates\reviews\list.html:8
+msgid "reviews"
+msgstr "Пікірлер"
+
+#: .\templates\cabinet.html:66 .\templates\reviews\index.html:14
+msgid "details"
+msgstr "Егжей"
+
+#: .\templates\cabinet.html:67 .\templates\reviews\index.html:15
+msgid "dater"
+msgstr "Күні"
+
+#: .\templates\claim\create.html:3 .\templates\claim\index.html:51
+#: .\templates\country\create.html:3 .\templates\country\index.html:14
+#: .\templates\country\index.html:34 .\templates\hotel\create.html:3
+#: .\templates\hotel\index.html:16 .\templates\hotel\index.html:42
+#: .\templates\news\create.html:3 .\templates\news\index.html:15
+#: .\templates\news\index.html:45 .\templates\region\create.html:3
+#: .\templates\region\index.html:15 .\templates\region\index.html:38
+#: .\templates\reviews\create.html:3
+msgid "Create"
+msgstr "Жасау"
+
+#: .\templates\claim\create.html:6 .\templates\claim\edit.html:6
+#: .\templates\claim\read.html:7
+msgid "claim"
+msgstr "Қолдану"
+
+#: .\templates\claim\create.html:16 .\templates\claim\edit.html:19
+#: .\templates\country\create.html:13 .\templates\country\edit.html:13
+#: .\templates\hotel\create.html:13 .\templates\hotel\edit.html:13
+#: .\templates\news\create.html:13 .\templates\news\edit.html:13
+#: .\templates\region\create.html:13 .\templates\region\edit.html:13
+#: .\templates\reviews\create.html:16
+msgid "Save"
+msgstr "Сақтау"
+
+#: .\templates\claim\create.html:17 .\templates\claim\edit.html:20
+#: .\templates\claim\read.html:34 .\templates\country\create.html:14
+#: .\templates\country\edit.html:14 .\templates\country\read.html:39
+#: .\templates\hotel\create.html:14 .\templates\hotel\edit.html:14
+#: .\templates\hotel\read.html:82 .\templates\news\create.html:14
+#: .\templates\news\edit.html:14 .\templates\news\read.html:45
+#: .\templates\region\create.html:14 .\templates\region\edit.html:14
+#: .\templates\region\read.html:19 .\templates\reviews\create.html:17
+msgid "Back"
+msgstr "Артқа"
+
+#: .\templates\claim\edit.html:3 .\templates\claim\index.html:41
+#: .\templates\country\edit.html:3 .\templates\country\index.html:24
+#: .\templates\hotel\edit.html:3 .\templates\hotel\index.html:32
+#: .\templates\news\edit.html:3 .\templates\news\index.html:35
+#: .\templates\region\edit.html:3 .\templates\region\index.html:28
+msgid "Change"
+msgstr "Өзгерту"
+
+#: .\templates\claim\edit.html:11
+msgid "users"
+msgstr "Пайдаланушылар"
+
+#: .\templates\claim\index.html:42 .\templates\country\index.html:25
+#: .\templates\hotel\index.html:33 .\templates\news\index.html:36
+#: .\templates\region\index.html:29
+msgid "View"
+msgstr "Көру"
+
+#: .\templates\claim\index.html:43 .\templates\country\index.html:26
+#: .\templates\hotel\index.html:34 .\templates\news\index.html:37
+#: .\templates\region\index.html:30 .\templates\reviews\index.html:38
+msgid "Delete"
+msgstr "Жою"
+
+#: .\templates\claim\read.html:4 .\templates\country\read.html:4
+#: .\templates\hotel\read.html:4 .\templates\news\read.html:4
+#: .\templates\region\read.html:3
+msgid "Read"
+msgstr "Көру"
+
+#: .\templates\claim\read.html:24 .\templates\region\create.html:6
+#: .\templates\region\edit.html:6 .\templates\region\read.html:6
+msgid "region"
+msgstr "Аймақ"
+
+#: .\templates\country\create.html:6 .\templates\country\edit.html:6
+#: .\templates\country\read.html:7
+msgid "country"
+msgstr "Мемлекет"
+
+#: .\templates\hotel\list.html:63
+msgid "Search"
+msgstr "Іздеу"
+
+#: .\templates\hotel\list.html:64
+msgid "Reset"
+msgstr "Қалпына келтіру"
+
+#: .\templates\hotel\list.html:99
+msgid "Apply"
+msgstr "Тапсырыс беру"
+
+#: .\templates\hotel\read.html:106
+msgid "No reviews yet"
+msgstr "Әзірге шолулар жоқ"
+
+#: .\templates\index.html:4
+msgid "App name"
+msgstr "KazTravel"
+
+#: .\templates\index.html:136
+msgid "all hotels"
+msgstr "Барлық қонақүйлер"
+
+#: .\templates\index.html:150
+msgid "Rating"
+msgstr "Баға"
+
+#: .\templates\index.html:157
+msgid "all reviews"
+msgstr "Барлық шолулар"
+
+#: .\templates\index.html:208
+msgid "all newss"
+msgstr "Барлық жаңалықтар"
+
+#: .\templates\news\index.html:13
+msgid "title"
+msgstr "Тақырыбы"
+
+#: .\templates\registration\logged_out.html:4
+#: .\templates\registration\login.html:4
+#: .\templates\registration\password_change_done.html:3
+#: .\templates\registration\password_change_form.html:3
+#: .\templates\registration\password_reset_complete.html:4
+#: .\templates\registration\password_reset_confirm.html:4
+#: .\templates\registration\password_reset_done.html:4
+#: .\templates\registration\password_reset_form.html:4
+#: .\templates\registration\register_done.html:4
+msgid "App Name"
+msgstr "KazTravel"
+
+#: .\templates\registration\logged_out.html:6
+msgid "Logged out!"
+msgstr "Сіз шықтыңыз!"
+
+#: .\templates\registration\logged_out.html:7
+msgid "Login again"
+msgstr "Қайтадан кіріңіз"
+
+#: .\templates\registration\login.html:7
+msgid "Incorrect login or password"
+msgstr "Қате логин немесе құпиясөз"
+
+#: .\templates\registration\login.html:12
+msgid "You dont have access"
+msgstr "Сізде рұқсат жоқ"
+
+#: .\templates\registration\login.html:14
+msgid "Login to see this page"
+msgstr "Бұл бетті көру үшін жүйеге кіріңіз"
+
+#: .\templates\registration\login.html:22
+msgid "Authorization"
+msgstr "Авторизация"
+
+#: .\templates\registration\login.html:27
+msgid "Login"
+msgstr "Кіру үшін"
+
+#: .\templates\registration\login.html:33
+msgid "Lost password?"
+msgstr "Құпия сөзіңізді ұмыттыңыз ба?"
+
+#: .\templates\registration\login.html:34
+#: .\templates\registration\signup.html:15
+msgid "Create an account"
+msgstr "Аккаунты құру"
+
+#: .\templates\registration\my_account.html:15
+msgid "Save changes"
+msgstr "Өзгерістерді сақтау"
+
+#: .\templates\registration\password_change_done.html:5
+msgid "Password changed"
+msgstr "Құпия сөз өзгертілді"
+
+#: .\templates\registration\password_reset_complete.html:6
+msgid "Password reset completed!"
+msgstr "Құпия сөзді қалпына келтіру аяқталды!"
+
+#: .\templates\registration\password_reset_complete.html:7
+msgid "Log in again?"
+msgstr "Қайтадан кіру керек пе?"
+
+#: .\templates\registration\password_reset_confirm.html:5
+#: .\templates\registration\password_reset_confirm.html:12
+msgid "Password reset confirmation"
+msgstr "Құпия сөзді қалпына келтіруді растау"
+
+#: .\templates\registration\password_reset_confirm.html:18
+#: .\templates\registration\password_reset_form.html:10
+#: .\templates\registration\password_reset_form.html:16
+msgid "Reset password"
+msgstr "Құпия сөзді қалпына келтіру"
+
+#: .\templates\registration\password_reset_confirm.html:26
+msgid "Please enter (and confirm) your new password."
+msgstr "Жаңа құпия сөзді енгізіңіз (және растаңыз)."
+
+#: .\templates\registration\password_reset_confirm.html:32
+msgid "New password:"
+msgstr "Жаңа құпия сөз:"
+
+#: .\templates\registration\password_reset_confirm.html:37
+msgid "Confirm password:"
+msgstr "Құпия сөзді растаңыз:"
+
+#: .\templates\registration\password_reset_confirm.html:48
+msgid "Password reset failed"
+msgstr "Құпия сөзді қалпына келтіру мүмкін болмады"
+
+#: .\templates\registration\password_reset_confirm.html:49
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used. Please request a new password reset."
+msgstr "Құпия сөзді қалпына келтіру сілтемесі жарамсыз, себебі "
+"пайдаланылды. Жаңа құпия сөзді қалпына келтіруді сұраңыз."
+
+#: .\templates\registration\password_reset_done.html:6
+msgid "Password reset"
+msgstr "Құпия сөзді қалпына келтіру"
+
+#: .\templates\registration\password_reset_done.html:7
+msgid "Check your email"
+msgstr "Электрондық поштаңызды тексеріңіз"
+
+#: .\templates\registration\password_reset_email.html:2
+msgid "Asked password reset email"
+msgstr "Құпия сөзді қалпына келтіру электрондық поштасы"
+
+#: .\templates\registration\password_reset_email.html:2
+msgid "Follow the link below:"
+msgstr "Төмендегі сілтеме бойынша өтіңіз:"
+
+#: .\templates\registration\register_done.html:10
+msgid "Welcome"
+msgstr "Қош келдіңіз"
+
+#: .\templates\registration\register_done.html:11
+msgid "Your account has been successfully created."
+msgstr "Есептік жазбаңыз сәтті жасалды."
+
+#: .\templates\registration\register_done.html:11
+#: .\templates\registration\signup.html:20
+msgid "Log in"
+msgstr "Кіру"
+
+#: .\templates\registration\signup.html:20
+msgid "Already have an account?"
+msgstr "Сізде бұрыннан тіркелгі бар ма?"

@@ -13,7 +13,7 @@
 				<th>{% trans "hotel_title" %}</th>
 				<th>{% trans "price" %}</th>
 				<!--<th></th>-->
-				<th><a href="{% url 'hotel_create'%}">{% trans "Add" %}</a></th>				
+				<th><a href="{% url 'hotel_create'%}">{% trans "Create" %}</a></th>				
 			</tr>
 		</thead>
 		<tbody>
@@ -39,6 +39,6 @@
 	</table>
 </div>
 {% else %}
-<a href="{% url 'hotel_create'%}">{% trans "Add" %}</a>
+<a href="{% url 'hotel_create'%}">{% trans "Create" %}</a>
 {% endif %}
 {% endblock content %}
