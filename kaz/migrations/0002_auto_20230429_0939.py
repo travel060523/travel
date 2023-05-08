@@ -12,7 +12,7 @@ def beginning(apps, schema_editor):
     
     # Суперпользователь id-1
     user = User.objects.create_superuser(username='root',
-    email='samga0412@mail.ru',
+    email='travel060523@mail.ru',
     password='SsNn5678+-@', 
     last_login=datetime.now())
     print("Суперпользователь создан")
