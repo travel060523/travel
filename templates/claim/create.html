@@ -11,6 +11,18 @@
 	{% csrf_token %}
     <table>
         {{ form }}
+		<tr>
+			<th><label for="id_room">{% trans "room" %}:</label></th>
+			<td>
+				<select name="room" required id="id_room"> 
+					<option>{% trans "SGL" %}</option>
+					<option>{% trans "DBL" %}</option>
+					<option>{% trans "TWIN" %}</option>
+					<option>{% trans "TRPL" %}</option>
+					<option>{% trans "QDPL" %}</option>
+				</select>
+			</td>
+		</tr>
     </table>
 	<br>
 	<button type="submit" class="btn btn-outline-success" style="width:100px">{% trans "Save" %}</button>	

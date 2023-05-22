@@ -47,7 +47,7 @@
 					<p>{{ n.result }}</p>	
 				</td>
 				<td>
-					<a href="{% url 'reviews_create' n.id %}">{% trans "reviews create" %}</a>					
+					<a href="{% url 'reviews_create' n.hotel_id %}">{% trans "reviews create" %}</a>					
 				</td>			
 			</tr>
 			{% endfor %}

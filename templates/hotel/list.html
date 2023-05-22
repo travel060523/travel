@@ -8,7 +8,6 @@
 	<h3>{% trans "hotels" %}</h3>
 </div>
 
-{% if hotel.count > 0 %}
 <div class="row" style="margin: 10px">
 	<form method="POST" enctype="multipart/form-data">
 		{% csrf_token %}
@@ -54,6 +53,7 @@
 	</form>
 </div>
 <hr>
+{% if hotel.count > 0 %}
 <div class="row">
 	<table id="myTable" style="width:100%">
 		<thead>

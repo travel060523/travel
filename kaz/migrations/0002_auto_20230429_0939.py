@@ -867,7 +867,7 @@ class Migration(migrations.Migration):
     operations = [
         migrations.RunPython(beginning),       
         migrations.RunSQL("""CREATE VIEW view_hotel AS
-                        SELECT hotel.id, country.title AS country, hotel.region_id, region.title AS region, hotel.title, hotel.details, hotel.photo, hotel.price, (SELECT AVG(rating) FROM reviews WHERE reviews.hotel_id = hotel.id) AS avg_rating 
+                        SELECT hotel.id, region.country_id, country.title AS country, hotel.region_id, region.title AS region, hotel.title, hotel.details, hotel.photo, hotel.price, (SELECT AVG(rating) FROM reviews WHERE reviews.hotel_id = hotel.id) AS avg_rating 
                         FROM hotel LEFT JOIN region ON hotel.region_id = region.id
                         LEFT JOIN country ON region.country_id = country.id;"""),
     ]

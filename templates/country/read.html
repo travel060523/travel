@@ -36,6 +36,139 @@
 		</div>		
 	</div>
 	<br>
+	{% if user.is_authenticated %}
+	<div>
+		
+		<div class="div-width-100-text-center">
+			<h3>{% trans "regions" %}</h3>
+		</div>
+		
+		<div class="row" style="margin: 10px">
+			{% if region.count > 0 %}
+				<form method="POST" enctype="multipart/form-data">
+					{% csrf_token %}
+					{% for n in region %}
+						{% ifequal   n.title  reg %} 
+							<p><input name="radio_region" type="radio" value="{{ n.title }}" checked="checked"> {{ n.title }}</p>
+						{% else %}
+							<p><input name="radio_region" type="radio" value="{{ n.title }}"> {{ n.title }}</p>
+						{% endifequal  %}
+					{% endfor %}
+					<button class="btn btn-outline-success" name="searchBtn" style="width:100px; margin:5px">{% trans "Search" %}</button>
+				</form>
+			{% endif %}
+		</div>
+		
+		<div class="div-width-100-text-center">
+			<h3>{% trans "hotels" %}</h3>
+		</div>
+
+		<hr>
+		{% if hotel.count > 0 %}
+		<div class="row">
+			<table id="myTable" style="width:100%">
+				<thead>
+					<tr>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for n in hotel %}
+					<tr>
+						<td>
+							<div class="card">
+								<div class="card-header">
+									<h5>{{ n.country }}</h5>
+									<h5>{{ n.region }}</h5>
+									<h4><a href="{% url 'hotel_read' n.id %}">{{ n.title }}</a></h4>
+								</div>
+								<div class="card-body">
+									<div class="row">
+										<div class="col-md-8">
+											<p>{{ n.details }}</p>
+											{% if user.is_authenticated %}
+												<form method="post">
+													{% csrf_token %}
+													<button type="submit" name="btn{{ n.id }}" id="btn_id{{ n.id }}" class="btn btn-outline-success" >{% trans "Apply" %}</button>
+													<input hidden type="text" name="hotel_id" size="0" value="{{ n.id }}">
+													<input hidden type="text" name="price" size="0" value="{{ n.price }}">
+													<input hidden type="text" name="user" size="0" value="{{ user.id }}">
+												</form>
+											{% endif %}
+
+										</div>
+										<div class="col-md-4">
+											{% if n.photo.url == "/ media /images/hotel1.jpg" %}
+												<img style="width:100%; max-width:400px;" src="{% static 'images/hotel1.jpg' %}" alt="{{ n.title }}" title="{{ n.details }}">
+											{% elif n.photo.url == "/ media /images/hotel2.jpg" %}
+												<img style="width:100%; max-width:400px;" src="{% static 'images/hotel2.jpg' %}" alt="{{ n.title }}" title="{{ n.details }}">
+											{% elif n.photo.url == "/ media /images/hotel3.jpg" %}
+												<img style="width:100%; max-width:400px;" src="{% static 'images/hotel3.jpg' %}" alt="{{ n.title }}" title="{{ n.details }}">
+											{% elif n.photo.url == "/ media /images/hotel4.jpg" %}
+												<img style="width:100%; max-width:400px;" src="{% static 'images/hotel4.jpg' %}" alt="{{ n.title }}" title="{{ n.details }}">
+											{% elif n.photo.url == "/ media /images/hotel5.jpg" %}
+												<img style="width:100%; max-width:400px;" src="{% static 'images/hotel5.jpg' %}" alt="{{ n.title }}" title="{{ n.details }}">
+											{% elif n.photo.url == "/ media /images/hotel6.jpg" %}
+												<img style="width:100%; max-width:400px;" src="{% static 'images/hotel6.jpg' %}" alt="{{ n.title }}" title="{{ n.details }}">
+											{% elif n.photo.url == "/ media /images/hotel7.jpg" %}
+												<img style="width:100%; max-width:400px;" src="{% static 'images/hotel7.jpg' %}" alt="{{ n.title }}" title="{{ n.details }}">
+											{% elif n.photo.url == "/ media /images/hotel8.jpg" %}
+												<img style="width:100%; max-width:400px;" src="{% static 'images/hotel8.jpg' %}" alt="{{ n.title }}" title="{{ n.details }}">
+											{% elif n.photo.url == "/ media /images/hotel9.jpg" %}
+												<img style="width:100%; max-width:400px;" src="{% static 'images/hotel9.jpg' %}" alt="{{ n.title }}" title="{{ n.details }}">
+											{% elif n.photo.url == "/ media /images/hotel10.jpg" %}
+												<img style="width:100%; max-width:400px;" src="{% static 'images/hotel10.jpg' %}" alt="{{ n.title }}" title="{{ n.details }}">
+											{% elif n.photo.url == "/ media /images/hotel11.jpg" %}
+												<img style="width:100%; max-width:400px;" src="{% static 'images/hotel11.jpg' %}" alt="{{ n.title }}" title="{{ n.details }}">
+											{% elif n.photo.url == "/ media /images/hotel12.jpg" %}
+												<img style="width:100%; max-width:400px;" src="{% static 'images/hotel12.jpg' %}" alt="{{ n.title }}" title="{{ n.details }}">
+											{% elif n.photo.url == "/ media /images/hotel13.jpg" %}
+												<img style="width:100%; max-width:400px;" src="{% static 'images/hotel13.jpg' %}" alt="{{ n.title }}" title="{{ n.details }}">
+											{% elif n.photo.url == "/ media /images/hotel14.jpg" %}
+												<img style="width:100%; max-width:400px;" src="{% static 'images/hotel14.jpg' %}" alt="{{ n.title }}" title="{{ n.details }}">
+											{% elif n.photo.url == "/ media /images/hotel15.jpg" %}
+												<img style="width:100%; max-width:400px;" src="{% static 'images/hotel15.jpg' %}" alt="{{ n.title }}" title="{{ n.details }}">
+											{% elif n.photo.url == "/ media /images/hotel16.jpg" %}
+												<img style="width:100%; max-width:400px;" src="{% static 'images/hotel16.jpg' %}" alt="{{ n.title }}" title="{{ n.details }}">
+											{% elif n.photo.url == "/ media /images/hotel17.jpg" %}
+												<img style="width:100%; max-width:400px;" src="{% static 'images/hotel17.jpg' %}" alt="{{ n.title }}" title="{{ n.details }}">
+											{% elif n.photo.url == "/ media /images/hotel18.jpg" %}
+												<img style="width:100%; max-width:400px;" src="{% static 'images/hotel18.jpg' %}" alt="{{ n.title }}" title="{{ n.details }}">
+											{% elif n.photo.url == "/ media /images/hotel19.jpg" %}
+												<img style="width:100%; max-width:400px;" src="{% static 'images/hotel19.jpg' %}" alt="{{ n.title }}" title="{{ n.details }}">
+											{% elif n.photo.url == "/ media /images/hotel20.jpg" %}
+												<img style="width:100%; max-width:400px;" src="{% static 'images/hotel20.jpg' %}" alt="{{ n.title }}" title="{{ n.details }}">
+											{% elif n.photo.url == "/ media /images/hotel21.jpg" %}
+												<img style="width:100%; max-width:400px;" src="{% static 'images/hotel21.jpg' %}" alt="{{ n.title }}" title="{{ n.details }}">
+											{% elif n.photo.url == "/ media /images/hotel22.jpg" %}
+												<img style="width:100%; max-width:400px;" src="{% static 'images/hotel22.jpg' %}" alt="{{ n.title }}" title="{{ n.details }}">
+											{% elif n.photo.url == "/ media /images/hotel23.jpg" %}
+												<img style="width:100%; max-width:400px;" src="{% static 'images/hotel23.jpg' %}" alt="{{ n.title }}" title="{{ n.details }}">
+											{% elif n.photo.url == "/ media /images/hotel24.jpg" %}
+												<img style="width:100%; max-width:400px;" src="{% static 'images/hotel24.jpg' %}" alt="{{ n.title }}" title="{{ n.details }}">
+											{% else %}
+												{% if n.photo.url != None %}
+													<img style="width:100%; max-width:400px;" src="{{ n.photo.url}}" alt="{{ n.title }}" title="{{ n.details }}">
+												{% endif %}
+											{% endif %}
+											<p><div class="Stars" style='--rating: {{ n.avg_rating| stringformat:".1f" }};'></div></p>							
+										</div>
+									</div>
+								</div>
+								<div class="card-footer text-muted">
+									<p><strong>{% trans "price" %}</strong>: {{ n.price }}<p>
+								</div>
+							</div>
+						</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		{% endif %}
+	
+	</div>										
+	{% endif %}
 	<a class="btn btn-outline-info" style="width:100px; margin-top:5px" onclick="history.back()">{% trans "Back" %}</a> 
 </div>
 {% endblock content %}

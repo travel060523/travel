@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-07 19:23+0600\n"
+"POT-Creation-Date: 2023-05-22 11:43+0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,12 +16,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-#: .\kaz\forms.py:45 .\kaz\models.py:37 .\kaz\models.py:95
+
+#: .\kaz\forms.py:45 .\kaz\models.py:37 .\kaz\models.py:96
 #: .\templates\country\index.html:12 .\templates\region\index.html:12
 msgid "country_title"
 msgstr "Мемлекет"
 
-#: .\kaz\forms.py:67 .\kaz\models.py:57 .\kaz\models.py:97
+#: .\kaz\forms.py:67 .\kaz\models.py:57 .\kaz\models.py:98
 #: .\templates\hotel\index.html:12 .\templates\region\index.html:13
 msgid "region_title"
 msgstr "Аймақ"
@@ -47,99 +48,113 @@ msgstr "Фото"
 msgid "region_details"
 msgstr "Аймақтың сипаттамасы"
 
-#: .\kaz\models.py:76 .\kaz\models.py:98 .\templates\cabinet.html:24
+#: .\kaz\models.py:76 .\kaz\models.py:99 .\templates\cabinet.html:24
 #: .\templates\cabinet.html:65 .\templates\claim\index.html:14
 #: .\templates\claim\read.html:25 .\templates\hotel\index.html:13
 #: .\templates\reviews\index.html:13
 msgid "hotel_title"
 msgstr "Қонақ үй атауы"
 
-#: .\kaz\models.py:77 .\kaz\models.py:99
+#: .\kaz\models.py:77 .\kaz\models.py:100
 msgid "hotel_details"
 msgstr "Қонақ үй сипаттамасы"
 
-#: .\kaz\models.py:78 .\kaz\models.py:100
+#: .\kaz\models.py:78 .\kaz\models.py:101
 msgid "hotel_photo"
 msgstr "Фото"
 
-#: .\kaz\models.py:79 .\kaz\models.py:101 .\templates\claim\create.html:9
+#: .\kaz\models.py:79 .\kaz\models.py:102 .\templates\claim\create.html:9
 #: .\templates\claim\edit.html:9 .\templates\claim\read.html:26
-#: .\templates\hotel\index.html:14 .\templates\hotel\list.html:166
-#: .\templates\hotel\read.html:79 .\templates\reviews\create.html:9
+#: .\templates\country\read.html:159 .\templates\hotel\index.html:14
+#: .\templates\hotel\list.html:148 .\templates\hotel\read.html:79
+#: .\templates\reviews\create.html:9
 msgid "price"
 msgstr "7 күндік өмір сүру құны (2 адам)"
 
-#: .\kaz\models.py:96
+#: .\kaz\models.py:95
+#, fuzzy
+#| msgid "country"
+msgid "country_id"
+msgstr "Мемлекет"
+
+#: .\kaz\models.py:97
 msgid "region_id"
 msgstr ""
 
-#: .\kaz\models.py:102
+#: .\kaz\models.py:103
 msgid "avg_rating"
 msgstr "Орташа рейтинг"
 
-#: .\kaz\models.py:121
+#: .\kaz\models.py:122
 msgid "datec_claim"
 msgstr "Өтініш беру күні"
 
-#: .\kaz\models.py:124
+#: .\kaz\models.py:125
 msgid "start"
 msgstr "Келу күні"
 
-#: .\kaz\models.py:125
+#: .\kaz\models.py:126
 msgid "finish"
 msgstr "Кету күні"
 
-#: .\kaz\models.py:126 .\templates\claim\read.html:20
+#: .\kaz\models.py:127 .\templates\claim\read.html:20
 msgid "claim_details"
 msgstr "Қолданба мәліметтері"
 
-#: .\kaz\models.py:127 .\templates\cabinet.html:26
+#: .\kaz\models.py:128 .\templates\cabinet.html:26
 #: .\templates\claim\index.html:16 .\templates\claim\read.html:21
 msgid "claim_result"
 msgstr "Өтінішті қарау нәтижесі"
 
-#: .\kaz\models.py:141
+#: .\kaz\models.py:142
 msgid "dater_reviews"
 msgstr "Күшін жою күні"
 
-#: .\kaz\models.py:143
+#: .\kaz\models.py:144
 msgid "rating"
 msgstr "Баға"
 
-#: .\kaz\models.py:144
+#: .\kaz\models.py:145
 msgid "details_reviews"
 msgstr "Кері байланыс мәтіні"
 
-#: .\kaz\models.py:159 .\templates\news\index.html:12
+#: .\kaz\models.py:160 .\templates\news\index.html:12
 msgid "daten"
 msgstr "Күні"
 
-#: .\kaz\models.py:160
+#: .\kaz\models.py:161
 msgid "title_news"
 msgstr "Жаңалықтар тақырыбы"
 
-#: .\kaz\models.py:161
+#: .\kaz\models.py:162
 msgid "details_news"
 msgstr "Жаңалықтар мәліметтері"
 
-#: .\kaz\models.py:162
+#: .\kaz\models.py:163
 msgid "photo_news"
 msgstr "Фото"
+
+#: .\kaz\views.py:466 .\templates\claim\create.html:15
+msgid "room"
+msgstr "Сан түрі"
 
 #: .\templates\base.html:36
 msgid "Home"
 msgstr "Үй"
 
 #: .\templates\base.html:43 .\templates\base.html:63
-#: .\templates\hotel\index.html:3 .\templates\hotel\index.html:6
-#: .\templates\hotel\list.html:4 .\templates\hotel\list.html:8
-#: .\templates\hotel\list.html:50 .\templates\index.html:70
+#: .\templates\country\read.html:63 .\templates\hotel\index.html:3
+#: .\templates\hotel\index.html:6 .\templates\hotel\list.html:4
+#: .\templates\hotel\list.html:8 .\templates\hotel\list.html:35
+#: .\templates\index.html:71
 msgid "hotels"
 msgstr "Қонақ үйлер"
 
-#: .\templates\base.html:46 .\templates\news\create.html:6
-#: .\templates\news\edit.html:6 .\templates\news\read.html:7
-msgid "news"
+#: .\templates\base.html:46 .\templates\base.html:68
+#: .\templates\index.html:164 .\templates\news\index.html:3
+#: .\templates\news\index.html:6 .\templates\news\list.html:4
+#: .\templates\news\list.html:8
+msgid "newss"
 msgstr "Жаңалықтар"
 
 #: .\templates\base.html:49 .\templates\contact.html:7
@@ -151,13 +166,14 @@ msgid "cabinet"
 msgstr "Жеке бөлме"
 
 #: .\templates\base.html:61 .\templates\country\index.html:3
-#: .\templates\country\index.html:6 .\templates\hotel\list.html:20
+#: .\templates\country\index.html:6 .\templates\hotel\list.html:19
 #: .\templates\index.html:40
 msgid "countrys"
 msgstr "Елдер"
 
-#: .\templates\base.html:62 .\templates\hotel\list.html:37
-#: .\templates\region\index.html:3 .\templates\region\index.html:6
+#: .\templates\base.html:62 .\templates\country\read.html:43
+#: .\templates\hotel\list.html:27 .\templates\region\index.html:3
+#: .\templates\region\index.html:6
 msgid "regions"
 msgstr "Аймақтар"
 
@@ -166,16 +182,10 @@ msgstr "Аймақтар"
 msgid "claims"
 msgstr "Қолданбалар"
 
-#: .\templates\base.html:66 .\templates\index.html:141
+#: .\templates\base.html:66 .\templates\index.html:142
 #: .\templates\reviews\index.html:4 .\templates\reviews\list.html:4
 msgid "reviewss"
 msgstr "Пікірлер"
-
-#: .\templates\base.html:68 .\templates\index.html:163
-#: .\templates\news\index.html:3 .\templates\news\index.html:6
-#: .\templates\news\list.html:4 .\templates\news\list.html:8
-msgid "newss"
-msgstr "Жаңалықтар"
 
 #: .\templates\base.html:73 .\templates\cabinet.html:12
 #: .\templates\registration\my_account.html:4
@@ -197,7 +207,7 @@ msgstr "Шығу"
 msgid "Log In"
 msgstr "Кіру"
 
-#: .\templates\base.html:83 .\templates\registration\signup.html:4
+#: .\templates\base.html:82 .\templates\registration\signup.html:4
 #: .\templates\registration\signup.html:10
 msgid "Sign up"
 msgstr "Тіркеу"
@@ -251,7 +261,27 @@ msgstr "Жасау"
 msgid "claim"
 msgstr "Қолдану"
 
-#: .\templates\claim\create.html:16 .\templates\claim\edit.html:19
+#: .\templates\claim\create.html:18
+msgid "SGL"
+msgstr "Жалғыз (SGL, single)"
+
+#: .\templates\claim\create.html:19
+msgid "DBL"
+msgstr "Бір кереуетпен екі орынды (DBL, double room)"
+
+#: .\templates\claim\create.html:20
+msgid "TWIN"
+msgstr "Екі төсектік екі орынды (TWIN)"
+
+#: .\templates\claim\create.html:21
+msgid "TRPL"
+msgstr "Үштік (TRPL, triple)"
+
+#: .\templates\claim\create.html:22
+msgid "QDPL"
+msgstr "Төрт еселік (QDPL, quadriple)"
+
+#: .\templates\claim\create.html:28 .\templates\claim\edit.html:19
 #: .\templates\country\create.html:13 .\templates\country\edit.html:13
 #: .\templates\hotel\create.html:13 .\templates\hotel\edit.html:13
 #: .\templates\news\create.html:13 .\templates\news\edit.html:13
@@ -260,9 +290,9 @@ msgstr "Қолдану"
 msgid "Save"
 msgstr "Сақтау"
 
-#: .\templates\claim\create.html:17 .\templates\claim\edit.html:20
+#: .\templates\claim\create.html:29 .\templates\claim\edit.html:20
 #: .\templates\claim\read.html:34 .\templates\country\create.html:14
-#: .\templates\country\edit.html:14 .\templates\country\read.html:39
+#: .\templates\country\edit.html:14 .\templates\country\read.html:172
 #: .\templates\hotel\create.html:14 .\templates\hotel\edit.html:14
 #: .\templates\hotel\read.html:82 .\templates\news\create.html:14
 #: .\templates\news\edit.html:14 .\templates\news\read.html:45
@@ -311,17 +341,17 @@ msgstr "Аймақ"
 msgid "country"
 msgstr "Мемлекет"
 
-#: .\templates\hotel\list.html:63
+#: .\templates\country\read.html:57 .\templates\hotel\list.html:43
 msgid "Search"
 msgstr "Іздеу"
 
-#: .\templates\hotel\list.html:64
-msgid "Reset"
-msgstr "Қалпына келтіру"
-
-#: .\templates\hotel\list.html:99
+#: .\templates\country\read.html:92 .\templates\hotel\list.html:81
 msgid "Apply"
 msgstr "Тапсырыс беру"
+
+#: .\templates\hotel\list.html:44
+msgid "Reset"
+msgstr "Қалпына келтіру"
 
 #: .\templates\hotel\read.html:106
 msgid "No reviews yet"
@@ -331,21 +361,30 @@ msgstr "Әзірге шолулар жоқ"
 msgid "App name"
 msgstr "KazTravel"
 
-#: .\templates\index.html:136
+#: .\templates\index.html:41
+msgid "Hot tours"
+msgstr "Ыстық турлар"
+
+#: .\templates\index.html:137
 msgid "all hotels"
 msgstr "Барлық қонақүйлер"
 
-#: .\templates\index.html:150
+#: .\templates\index.html:151
 msgid "Rating"
 msgstr "Баға"
 
-#: .\templates\index.html:157
+#: .\templates\index.html:158
 msgid "all reviews"
 msgstr "Барлық шолулар"
 
-#: .\templates\index.html:208
+#: .\templates\index.html:209
 msgid "all newss"
 msgstr "Барлық жаңалықтар"
+
+#: .\templates\news\create.html:6 .\templates\news\edit.html:6
+#: .\templates\news\read.html:7
+msgid "news"
+msgstr "Жаңалықтар"
 
 #: .\templates\news\index.html:13
 msgid "title"
@@ -447,8 +486,9 @@ msgstr "Құпия сөзді қалпына келтіру мүмкін бол�
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
 "used. Please request a new password reset."
-msgstr "Құпия сөзді қалпына келтіру сілтемесі жарамсыз, себебі "
-"пайдаланылды. Жаңа құпия сөзді қалпына келтіруді сұраңыз."
+msgstr ""
+"Құпия сөзді қалпына келтіру сілтемесі жарамсыз, себебі пайдаланылды. Жаңа "
+"құпия сөзді қалпына келтіруді сұраңыз."
 
 #: .\templates\registration\password_reset_done.html:6
 msgid "Password reset"

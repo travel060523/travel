@@ -92,6 +92,7 @@ class Hotel(models.Model):
         return "{}: {}".format(self.region, self.title)
 
 class ViewHotel(models.Model):
+    country_id = models.IntegerField(_('country_id'))
     country = title = models.CharField(_('country_title'), max_length=128)
     region_id = models.IntegerField(_('region_id'))
     region = models.CharField(_('region_title'), max_length=128)

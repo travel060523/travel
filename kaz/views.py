@@ -151,7 +151,26 @@ def country_delete(request, id):
 def country_read(request, id):
     try:
         country = Country.objects.get(id=id) 
-        return render(request, "country/read.html", {"country": country})
+        region = Region.objects.filter(country_id=id).order_by('title')
+        if request.method == "POST":
+            if 'searchBtn' in request.POST:
+                reg = request.POST.get('radio_region')
+                print(reg)
+                hotel = ViewHotel.objects.filter(country_id=id).filter(region=reg).order_by('title')
+                return render(request, "country/read.html", {"country": country, "region": region, "hotel": hotel, "reg": reg})
+            else:
+                # Выделить id отеля
+                hotel_id = request.POST.dict().get("hotel_id")
+                print("hotel_id ", hotel_id)
+                price = request.POST.dict().get("price")
+                print("price ", price)
+                user = request.POST.dict().get("user")
+                print("user ", user)
+                # Перейти к созданию заявки
+                return HttpResponseRedirect(reverse('claim_create', args=(hotel_id,)))
+        else:
+            hotel = ViewHotel.objects.filter(country_id=id).order_by('title')
+            return render(request, "country/read.html", {"country": country, "region": region, "hotel": hotel})
     except Country.DoesNotExist:
         return HttpResponseNotFound("<h2>Country not found</h2>")
     except Exception as exception:
@@ -444,7 +463,7 @@ def claim_create(request, hotel_id):
             claim.hotel_id = hotel_id
             claim.start = request.POST.get("start")
             claim.finish = request.POST.get("finish")
-            claim.details = request.POST.get("details")
+            claim.details = request.POST.get("details") + ". \r\n" + _('room') + ": " + request.POST.get("room")
             claim.user_id = request.user.id
             claimform = ClaimForm(request.POST)
             if claimform.is_valid():
